@@ -8,6 +8,7 @@ export default async (req, res) => {
         const response = await createLocalUser(req.body);
         res.status(201).json({success: true, ...response});
     } catch (err) {
+        console.log(err)
         res.status(500).json({success: false, message: err.message});
     }
 }

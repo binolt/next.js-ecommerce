@@ -8,9 +8,9 @@ handler.get(async(req, res) => {
     const { id } = req.query;
     try {
         const result = await fetchUserById(id);
-        res.status(200).json({success: true, ...result})
+        res.status(200).json({success: true, user: result})
     } catch (err) {
-        res.status(500).json({message: err.message, ...err});
+        res.status(500).json({success: false, message: err.message, ...err});
     }
 })
 

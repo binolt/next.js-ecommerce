@@ -55,7 +55,7 @@ export const createDefaultCollection = async(db, identifier) => {
         validator: {
             $jsonSchema: {
                 bsonType: 'object',
-                required: ['username'],
+                required: ['username', 'active'],
                 additionalProperties: false,
                 properties: {
                     _id: {},
@@ -67,13 +67,17 @@ export const createDefaultCollection = async(db, identifier) => {
                         bsonType: "string",
                         description: "'email address' is required and is a string."
                     },
-                    github_id: {
-                        bsonType: "string",
-                        description: "'github id' is optional but, if used, must be a string."
-                    },
                     google_id: {
                         bsonType: "string",
                         description: "'google id' is optional but, if used, must be a string."
+                    },
+                    active: {
+                        bsonType: "bool",
+                        description: "'active' is required and is a boolean"
+                    },  
+                    email_verification_hash: {
+                        bsonType: "string",
+                        description: "'email_verification_hash' is optional but, if used, must be a string."
                     },
                     hash: {
                         bsonType: "string",

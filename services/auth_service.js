@@ -60,6 +60,18 @@ const auth_service = {
       credentials: "same-origin",
     });
     return await res.json();
+  },
+  fetchEmailVerificationHash: async(hash) => {
+    const res = await fetch(`${base_url}/api/auth/verify/${hash}`);
+    return await res.json();
+  },
+  deleteEmailVerificationHash: async(hash) => {
+    const res = await fetch(`${base_url}/api/auth/verify/${hash}`, {
+      method: "DELETE",
+      mode: "cors",
+      credentials: "same-origin",
+    });
+    return await res.json();
   }
 };
 
