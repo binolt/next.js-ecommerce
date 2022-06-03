@@ -22,6 +22,7 @@ function Landing() {
       <div className='app_wrapper'>
         <Fade duration={1000} top distance="20px">
         <div className='app_content'>
+          {user && user.active && <p>Verified ✔️</p>}
           {user ? <h1>Welcome back, {user.username} !</h1> : <h1>Next.js Authentication flow <br/> built with Passport.</h1>}
           <p>Implement a secure authentication system for Next.js built with<br/>Passport that supports custom credentials and third party logins.</p>
           <span>

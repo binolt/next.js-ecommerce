@@ -69,7 +69,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 150px;
+  margin-bottom: 70px;
 }
 
 .app_content h1 {
@@ -98,6 +98,15 @@
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
+}
+
+@media (max-width: 400px) {
+  .app_content span {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 @-webkit-keyframes blink {
@@ -134,32 +143,11 @@
 .nav_brand {
   font-size: 1.1em;
   font-weight: 600;
-}
-
-.nav_center {
-  font-size: .95em;
-  color: #868686;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 2rem;
-}
-
-@media (max-width: 768px) {
-  .nav_center {
-    display: none;
-  }
-}
-
-.nav_center p {
   cursor: pointer;
 }
 
 .nav_end {
-  font-size: .9em;
+  font-size: 0.9em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -206,7 +194,7 @@
   background-color: #181717;
   color: #fff;
   position: relative;
-  width: 340px;
+  width: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -220,7 +208,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 5px;
-  padding: 2rem;
+  padding: 3rem;
 }
 
 .modal h1 {
@@ -228,17 +216,55 @@
   background: none;
   font-size: 1.8em;
   font-weight: 600;
+  width: 100%;
 }
 
 .modal .login_subhead {
   color: #868686;
-  font-size: .9em;
+  font-size: 0.9em;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.modal .login_break {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  color: #868686;
+  margin: 1.5rem 0;
+  font-size: 14px;
+}
+
+.modal .login_break p {
+  width: 50%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  white-space: nowrap;
+  white-space: pre;
+}
+
+.modal .login_break hr {
+  width: 30%;
+  height: 2px;
+  background-color: #868686;
+  border: 0;
+}
+
+.modal .login_forgot {
+  font-size: 0.9em;
+  color: #868686;
+  text-align: right;
+  margin-bottom: 2rem;
+  margin-top: -.5rem;
+  cursor: pointer;
 }
 
 .modal .login_footer {
-  font-size: .9em;
+  font-size: 0.9em;
   color: #868686;
   margin-top: 2rem;
 }
@@ -265,12 +291,86 @@
           justify-content: center;
 }
 
-.modal .a_c_d_summary_item_button {
+.a_c_d_summary_item_button {
   color: #fff;
 }
 
-.modal .a_c_d_summary_item_button svg {
+.a_c_d_summary_item_button svg {
   color: #fff;
+}
+
+.app_register {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 70px;
+}
+
+.app_register .a_r_content {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.app_register .a_r_subhead {
+  color: #868686;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.app_register .a_r_subhead svg {
+  margin-right: 0.5rem;
+  margin-bottom: 0.08rem;
+}
+
+.app_register .a_r_head {
+  font-size: 3em;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.app_register .a_r_c_body {
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+.app_register .a_r_c_b_break {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  color: #868686;
+  margin: 1.5rem 0;
+  font-size: 14px;
+}
+
+.app_register .a_r_c_b_break p {
+  width: 50%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  white-space: nowrap;
+  white-space: pre;
+}
+
+.app_register .a_r_c_b_break hr {
+  width: 40%;
+  height: 2px;
+  background-color: #868686;
+  border: 0;
 }
 
 :root, body[data-theme="default"] {

@@ -57,6 +57,11 @@ export default function AuthModal() {
     }
 }
 
+const resetPassword = () => {
+  setModalOpen(false); //close modal
+  router.push("/forgot")
+}
+
   return (
     <Modal
       isOpen={modalIsOpen}
@@ -80,6 +85,7 @@ export default function AuthModal() {
         <form onSubmit={handleSubmit}>
             <CssTextField autoComplete="false" ref={usernameRef} sx={{width: '100%'}} label="Username" id="custom-css-outlined-input-email"/>
             <CssTextField ref={passwordRef} type="password" sx={{width: '100%', m: '1rem 0'}} label="Password" id="custom-css-outlined-input-password" />
+            <p onClick={resetPassword} className="login_forgot">Forgot password?</p>
             <LoadingBtn
                 className='a_c_d_summary_item_button'
                 loading={isProcessing}

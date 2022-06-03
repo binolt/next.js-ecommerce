@@ -72,6 +72,33 @@ const auth_service = {
       credentials: "same-origin",
     });
     return await res.json();
+  },
+  passwordResetUpdate: async(csrf_token, payload) => {
+    const res = await fetch(`${base_url}/api/auth/reset/`, {
+      method: "PUT",
+      mode: "cors",
+      credentials: "same-origin",
+      headers: {
+          "Content-Type": "application/json",
+          'Accept': 'application/json',
+          'CSRF-Token': csrf_token,
+      },
+      body: JSON.stringify(payload),
+    });
+    return await res.json();
+  },
+  sendPasswordResetEmail: async(payload) => {
+    const res = await fetch(`${base_url}/api/auth/reset`, {
+      method: "POST",
+      mode: "cors",
+      credentials: "same-origin",
+      headers: {
+          "Content-Type": "application/json",
+          'Accept': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+    return await res.json();
   }
 };
 

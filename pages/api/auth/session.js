@@ -9,8 +9,8 @@ export default async(req, res) => {
             res.status(403).json({user: null});
             return;
         }
-        const { _id, username } = user
-        res.status(200).json({ user: { username, _id }})
+        const { _id, username, active } = user
+        res.status(200).json({ user: { username, _id, active }})
     } catch (err) {
         res.status(500).end('Authentication token is invalid, please log in')
     }
